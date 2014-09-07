@@ -132,6 +132,7 @@ You can also set the right address for localhost.
 Edit /etc/netstart.
 * Remove interfaces other than qe0
 * Set the hostname 
+* Add default gateway
 
 My netstart file looks like:
 
@@ -154,6 +155,8 @@ ifconfig qe0 inet $hostname netmask my-netmask
 ifconfig lo0  inet localhost
 route add $hostname localhost 0
 hostid $hostname
+
+route add default 192.168.2.1 1
 
 ```
 
